@@ -10,6 +10,9 @@ import FormHelperText from "@mui/material/FormHelperText";
 import Input from "@mui/material/Input";
 import Avatar from "@mui/material/Avatar";
 import DropZone from "./DropZone";
+import CountrySelector from "./CountrySelector";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 export default function App() {
   return (
@@ -81,6 +84,26 @@ export default function App() {
         <Avatar />
         <DropZone />
       </Box>
+      <FormControl sx={{ display: { sm: "contents" } }}>
+        <FormLabel>Role</FormLabel>
+        <Input defaultValue="UI Developer" />
+      </FormControl>
+
+      <CountrySelector />
+
+      <FormControl sx={{ display: { sm: "contents" } }}>
+        <FormLabel>Timezone</FormLabel>
+        <Select defaultValue="1">
+          <MenuItem value="1">
+            Central Time (Chicago){" "}
+            <Typography>— GMT-05:00</Typography>
+          </MenuItem>
+          <MenuItem value="2">
+            Eastern Time (Detroit){" "}
+            <Typography>— GMT-4:00</Typography>
+          </MenuItem>
+        </Select>
+      </FormControl>
     </Container>
   );
 }
