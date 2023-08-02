@@ -13,6 +13,8 @@ import DropZone from "./DropZone";
 import CountrySelector from "./CountrySelector";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import EditorToolbar from "./EditorToolbar";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
 
 export default function App() {
   return (
@@ -95,15 +97,27 @@ export default function App() {
         <FormLabel>Timezone</FormLabel>
         <Select defaultValue="1">
           <MenuItem value="1">
-            Central Time (Chicago){" "}
-            <Typography>— GMT-05:00</Typography>
+            Central Time (Chicago) <Typography>— GMT-05:00</Typography>
           </MenuItem>
           <MenuItem value="2">
-            Eastern Time (Detroit){" "}
-            <Typography>— GMT-4:00</Typography>
+            Eastern Time (Detroit) <Typography>— GMT-4:00</Typography>
           </MenuItem>
         </Select>
       </FormControl>
+      <Box>
+        <FormLabel>Bio</FormLabel>
+        <FormHelperText>Write a short introduction.</FormHelperText>
+      </Box>
+      <Box>
+        <EditorToolbar />
+        <TextareaAutosize
+          minRows={4}
+          defaultValue="I'm a software developer based in Minneapolis, MN, USA. My specialty is JavaScript, and I mainly work with React and Next.js."
+        />
+        <FormHelperText sx={{ mt: 0.75, fontSize: "xs" }}>
+          275 characters remaining
+        </FormHelperText>
+      </Box>
     </Container>
   );
 }
