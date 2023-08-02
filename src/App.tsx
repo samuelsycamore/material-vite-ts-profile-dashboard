@@ -6,7 +6,10 @@ import Tab from "@mui/material/Tab";
 import Chip from "@mui/material/Chip";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
+import FormHelperText from "@mui/material/FormHelperText";
 import Input from "@mui/material/Input";
+import Avatar from "@mui/material/Avatar";
+import DropZone from "./DropZone";
 
 export default function App() {
   return (
@@ -60,12 +63,23 @@ export default function App() {
 
         <FormControl sx={{ display: { sm: "contents" } }}>
           <FormLabel>Email</FormLabel>
-          <Input
-            type="email"
-            placeholder="email"
-            defaultValue="sam@sycamore.garden"
-          />
+          <Input type="email" placeholder="email" defaultValue="sam@mui.com" />
         </FormControl>
+      </Box>
+      <Box>
+        <FormLabel>Your photo</FormLabel>
+        <FormHelperText>This will be displayed on your profile.</FormHelperText>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-start",
+          flexWrap: "wrap",
+          gap: 2.5,
+        }}
+      >
+        <Avatar />
+        <DropZone />
       </Box>
     </Container>
   );
