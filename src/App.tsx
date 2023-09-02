@@ -8,16 +8,16 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import Input from "@mui/material/Input";
 import Avatar from "@mui/material/Avatar";
-import DropZone from "./DropZone";
-import CountrySelector from "./CountrySelector";
+import DropZone from "./components/DropZone";
+import CountrySelector from "./components/CountrySelector";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import EditorToolbar from "./EditorToolbar";
+import EditorToolbar from "./components/EditorToolbar";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
-import FileUpload from "./FileUpload";
+import FileUpload from "./components/FileUpload";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Sidebar from "./Sidebar";
+import Sidebar from "./components/Sidebar";
 
 export default function App() {
   return (
