@@ -17,13 +17,20 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 import FileUpload from "./FileUpload";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Sidebar from "./Sidebar";
 
 export default function App() {
   return (
-    <Box>
-      <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
-        My profile
-      </Typography>
+    <Box
+      sx={{
+        display: "flex",
+      }}
+    >
+      <Sidebar />
+      <Box>
+        <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
+          My profile
+        </Typography>
         <Box sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }}>
           <Tabs>
             <Tab label="Account settings" sx={{ pl: 0 }} />
@@ -164,6 +171,7 @@ export default function App() {
           <Button>Cancel</Button>
           <Button>Save</Button>
         </Box>
+      </Box>
     </Box>
   );
 }
