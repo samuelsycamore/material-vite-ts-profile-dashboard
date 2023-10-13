@@ -1,9 +1,9 @@
 import { PaletteMode } from "@mui/material";
-import { indigo, grey } from "@mui/material/colors";
+import { blueGrey, grey } from "@mui/material/colors";
 
 const theme = {
   palette: {
-    primary: indigo,
+    primary: blueGrey,
   },
 };
 
@@ -13,8 +13,8 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     ...(mode === "light"
       ? {
           // palette values for light mode
-          primary: indigo,
-          divider: indigo[200],
+          primary: blueGrey,
+          divider: blueGrey[200],
           text: {
             primary: grey[900],
             secondary: grey[800],
@@ -22,11 +22,11 @@ export const getDesignTokens = (mode: PaletteMode) => ({
         }
       : {
           // palette values for dark mode
-          primary: indigo,
-          divider: indigo[700],
+          primary: blueGrey,
+          divider: blueGrey[700],
           background: {
-            default: indigo[900],
-            paper: indigo[900],
+            default: blueGrey[900],
+            paper: blueGrey[900],
           },
           text: {
             primary: "#fff",

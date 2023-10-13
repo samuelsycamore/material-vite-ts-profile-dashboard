@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -11,9 +12,43 @@ import LinearProgress from "@mui/material/LinearProgress";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
+import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import MuiLogo from "./MuiLogo";
 import ColorSchemeToggle from "./ColorSchemeToggle";
+import { closeSidebar } from '../utils';
+
+function Toggler({
+  defaultExpanded = false,
+  renderToggle,
+  children,
+}: {
+  defaultExpanded?: boolean;
+  children: React.ReactNode;
+  renderToggle: (params: {
+    open: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  }) => React.ReactNode;
+}) {
+  const [open, setOpen] = React.useState(defaultExpanded);
+  return (
+    <React.Fragment>
+      {renderToggle({ open, setOpen })}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateRows: open ? '1fr' : '0fr',
+          transition: '0.2s ease',
+          '& > *': {
+            overflow: 'hidden',
+          },
+        }}
+      >
+        {children}
+      </Box>
+    </React.Fragment>
+  );
+}
 
 const Dropdown = styled("i")(({ theme }) => ({
   color: theme.palette.text.secondary,
@@ -21,6 +56,50 @@ const Dropdown = styled("i")(({ theme }) => ({
 
 export default function Sidebar() {
   return (
+    <Stack
+    className="Sidebar"
+    sx={{
+      position: {
+        xs: 'fixed',
+        md: 'sticky',
+      },
+      transform: {
+        xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1)))',
+        md: 'none',
+      },
+      transition: 'transform 0.4s, width 0.4s',
+      zIndex: 10000,
+      height: '100dvh',
+      width: 'var(--Sidebar-width)',
+      top: 0,
+      p: 2,
+      flexShrink: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 2,
+      borderRight: '1px solid',
+      borderColor: 'divider',
+    }}
+  >
+    <Box
+        className="Sidebar-overlay"
+        sx={{
+          position: 'fixed',
+          zIndex: 9998,
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          opacity: '30%',
+          backgroundColor: 'black',
+          transition: 'opacity 0.4s',
+          transform: {
+            xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--Sidebar-width, 0px)))',
+            lg: 'translateX(-100%)',
+          },
+        }}
+        onClick={() => closeSidebar()}
+      />
     <Box
       className="Sidebar"
       sx={{
@@ -178,5 +257,6 @@ export default function Sidebar() {
         </IconButton>
       </Box>
     </Box>
+    </Stack>
   );
 }

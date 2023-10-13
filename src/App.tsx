@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Chip from "@mui/material/Chip";
+import DocDrawer from "./components/DocDrawer";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
@@ -32,7 +33,7 @@ export default function App() {
           display: "flex",
         }}
       >
-        <Sidebar />
+        <DocDrawer />
         <Box>
           <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
             My profile
