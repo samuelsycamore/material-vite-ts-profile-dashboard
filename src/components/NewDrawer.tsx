@@ -108,11 +108,15 @@ export default function NewDrawer() {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
+              width: "240px",
             }}
           >
             <Toggler
               renderToggle={({ open, setOpen }) => (
-                <ListItemButton onClick={() => setOpen(!open)}>
+                <ListItemButton
+                  sx={{ width: "100%" }}
+                  onClick={() => setOpen(!open)}
+                >
                   <AssignmentRoundedIcon />
                   <Typography>Tasks</Typography>
                   <KeyboardArrowDownIcon
@@ -155,7 +159,10 @@ export default function NewDrawer() {
             <Toggler
               defaultExpanded
               renderToggle={({ open, setOpen }) => (
-                <ListItemButton onClick={() => setOpen(!open)}>
+                <ListItemButton
+                  sx={{ width: "100%" }}
+                  onClick={() => setOpen(!open)}
+                >
                   <GroupRoundedIcon />
                   <Typography>Users</Typography>
                   <KeyboardArrowDownIcon
@@ -199,7 +206,14 @@ export default function NewDrawer() {
             </ListItemButton>
           </ListItem>
         </List>
-        <Card sx={{ boxShadow: "none" }}>
+        <Card
+          sx={{
+            boxShadow: "none",
+            margin: "20px",
+            padding: "20px",
+            backgroundColor: "lightyellow",
+          }}
+        >
           <Stack
             direction="row"
             justifyContent="space-between"
