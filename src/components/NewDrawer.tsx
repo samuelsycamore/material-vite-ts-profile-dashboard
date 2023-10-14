@@ -219,10 +219,10 @@ export default function NewDrawer() {
       </Box>
       <Divider />
       <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=286" />
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=50" />
         <Box sx={{ minWidth: 0, flex: 1 }}>
-          <Typography>Siriwat K.</Typography>
-          <Typography>siriwatk@test.com</Typography>
+          <Typography>Sam Sycamore</Typography>
+          <Typography>sam@sycamore.com</Typography>
         </Box>
         <IconButton>
           <LogoutRoundedIcon />
