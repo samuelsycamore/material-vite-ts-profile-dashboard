@@ -1,3 +1,4 @@
+import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
@@ -18,13 +19,18 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 import FileUpload from "./components/FileUpload";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Sidebar from "./components/Sidebar";
 import { useThemeContext } from "./theme/ThemeContextProvider";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 
-export default function App() {
+export default function App(props: any) {
   const { theme } = useThemeContext();
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -33,7 +39,12 @@ export default function App() {
           display: "flex",
         }}
       >
-        <DocDrawer />
+        <DocDrawer
+          window={window}
+          mobileOpen={mobileOpen}
+          setMobileOpen={setMobileOpen}
+          handleDrawerToggle={handleDrawerToggle}
+        />
         <Box>
           <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
             My profile
