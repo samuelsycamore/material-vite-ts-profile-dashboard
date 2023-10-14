@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Chip from "@mui/material/Chip";
-
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
@@ -22,15 +21,11 @@ import Button from "@mui/material/Button";
 import { useThemeContext } from "./theme/ThemeContextProvider";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
-
 import AppBar from "@mui/material/AppBar";
-
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-
 import NewDrawer from "./components/NewDrawer";
 
 const drawerWidth = 240;
@@ -107,7 +102,13 @@ export default function App(props: any) {
           </Drawer>
         </Box>
       </Box>
-      <Box>
+      <Box
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { xs: "16px", sm: `${drawerWidth + 16}px` },
+          mt: { xs: "80px", sm: "16px" },
+        }}
+      >
         <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
           My profile
         </Typography>
