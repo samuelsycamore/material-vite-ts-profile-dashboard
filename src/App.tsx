@@ -338,11 +338,7 @@ function DocDrawer(props: any) {
 
 export default function App() {
   const { theme } = useThemeContext();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -351,7 +347,7 @@ export default function App() {
           display: "flex",
         }}
       >
-        <DocDrawer handleDrawerToggle={handleDrawerToggle} />
+        <DocDrawer />
         <Box>
           <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
             My profile
