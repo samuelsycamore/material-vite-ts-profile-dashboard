@@ -94,9 +94,11 @@ export default function Profile() {
           },
         }}
       >
-        <Card>
+        <Card sx={{ p: 3 }}>
           <Box sx={{ mb: 1 }}>
-            <Typography>Personal info</Typography>
+            <Typography variant="h6" gutterBottom>
+              Personal info
+            </Typography>
             <Typography>
               Customize how your information will be displayed to the network.
             </Typography>
@@ -183,9 +185,11 @@ export default function Profile() {
           </FormControl>
         </Card>
 
-        <Card>
+        <Card sx={{ p: 3 }}>
           <Box sx={{ mb: 1 }}>
-            <Typography>Bio</Typography>
+            <Typography variant="h6" gutterBottom>
+              Bio
+            </Typography>
             <Typography>
               Write a short introduction to be displayed on your profile.
             </Typography>
@@ -202,9 +206,11 @@ export default function Profile() {
             </FormHelperText>
           </Box>
         </Card>
-        <Card>
+        <Card sx={{ p: 3 }}>
           <Box sx={{ mb: 1 }}>
-            <Typography>Portfolio projects</Typography>
+            <Typography variant="h6" gutterBottom>
+              Portfolio projects
+            </Typography>
             <Typography>Share a few examples of your work.</Typography>
           </Box>
 
@@ -219,14 +225,12 @@ export default function Profile() {
             />
 
             <FileUpload
-
               fileName="Dashboard prototype recording.mp4"
               fileSize="16 MB"
               progress={40}
             />
 
             <FileUpload
-
               fileName="Dashboard prototype FINAL.fig"
               fileSize="4.2 MB"
               progress={80}
