@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import { useThemeContext } from "./theme/ThemeContextProvider";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
@@ -10,6 +9,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import NewDrawer from "./components/NewDrawer";
 import Profile from "./components/Profile";
+import Box from "@mui/material/Box";
 
 const drawerWidth = 240;
 
