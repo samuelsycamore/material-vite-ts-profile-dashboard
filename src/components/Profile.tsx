@@ -31,18 +31,25 @@ export default function Profile() {
         width: "100%",
       }}
     >
-      <Box
+      <Stack
+        spacing={4}
         sx={{
+          display: "flex",
+          maxWidth: "800px",
+          mx: "auto",
           px: {
             xs: 2,
             md: 6,
+          },
+          py: {
+            xs: 2,
+            md: 3,
           },
         }}
       >
         <Breadcrumbs
           aria-label="breadcrumbs"
           separator={<ChevronRightRoundedIcon />}
-          sx={{ pl: 0 }}
         >
           <Link underline="none" href="#some-link" aria-label="Home">
             <HomeRoundedIcon />
@@ -59,18 +66,18 @@ export default function Profile() {
             My profile
           </Typography>
         </Breadcrumbs>
-      </Box>
-      <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
-        My profile
-      </Typography>
-      <Box sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }}>
-        <Tabs value={0}>
-          <Tab label="Settings" sx={{ pl: 0 }} />
-          <Tab label="Team" />
-          <Tab label="Plan" />
-          <Tab label="Billing" />
-        </Tabs>
-      </Box>
+        <Typography variant="h4" component="h2" fontWeight={700} sx={{ my: 2 }}>
+          My profile
+        </Typography>
+        <Box sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }}>
+          <Tabs value={0}>
+            <Tab label="Settings" />
+            <Tab label="Team" />
+            <Tab label="Plan" />
+            <Tab label="Billing" />
+          </Tabs>
+        </Box>
+      </Stack>
       <Stack
         spacing={4}
         sx={{
