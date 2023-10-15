@@ -33,54 +33,43 @@ export default function Profile() {
     >
       <Box
         sx={{
-          position: "sticky",
-          top: {
-            sm: -100,
-            md: -110,
+          px: {
+            xs: 2,
+            md: 6,
           },
-          zIndex: 9995,
         }}
       >
-        <Box
-          sx={{
-            px: {
-              xs: 2,
-              md: 6,
-            },
-          }}
+        <Breadcrumbs
+          aria-label="breadcrumbs"
+          separator={<ChevronRightRoundedIcon />}
+          sx={{ pl: 0 }}
         >
-          <Breadcrumbs
-            aria-label="breadcrumbs"
-            separator={<ChevronRightRoundedIcon />}
-            sx={{ pl: 0 }}
+          <Link underline="none" href="#some-link" aria-label="Home">
+            <HomeRoundedIcon />
+          </Link>
+          <Link
+            underline="hover"
+            href="#some-link"
+            fontSize={12}
+            fontWeight={500}
           >
-            <Link underline="none" href="#some-link" aria-label="Home">
-              <HomeRoundedIcon />
-            </Link>
-            <Link
-              underline="hover"
-              href="#some-link"
-              fontSize={12}
-              fontWeight={500}
-            >
-              Users
-            </Link>
-            <Typography fontWeight={500} fontSize={12}>
-              My profile
-            </Typography>
-          </Breadcrumbs>
-        </Box>
-        <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
-          My profile
-        </Typography>
-        <Box sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }}>
-          <Tabs value={0}>
-            <Tab label="Settings" sx={{ pl: 0 }} />
-            <Tab label="Team" />
-            <Tab label="Plan" />
-            <Tab label="Billing" />
-          </Tabs>
-        </Box>
+            Users
+          </Link>
+          <Typography fontWeight={500} fontSize={12}>
+            My profile
+          </Typography>
+        </Breadcrumbs>
+      </Box>
+      <Typography variant="h6" component="h1" sx={{ mt: 2 }}>
+        My profile
+      </Typography>
+      <Box sx={{ borderBottom: 1, borderColor: "divider", width: "100%" }}>
+        <Tabs value={0}>
+          <Tab label="Settings" sx={{ pl: 0 }} />
+          <Tab label="Team" />
+          <Tab label="Plan" />
+          <Tab label="Billing" />
+        </Tabs>
       </Box>
       <Stack
         spacing={4}
