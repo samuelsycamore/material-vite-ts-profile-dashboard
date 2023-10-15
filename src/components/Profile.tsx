@@ -98,7 +98,7 @@ export default function Profile() {
           <Box sx={{ mb: 1 }}>
             <Typography>Personal info</Typography>
             <Typography>
-              Customize how your profile information will apper to the networks.
+              Customize how your information will be displayed to the network.
             </Typography>
           </Box>
           <Divider />
@@ -187,7 +187,7 @@ export default function Profile() {
           <Box sx={{ mb: 1 }}>
             <Typography>Bio</Typography>
             <Typography>
-              Write a short introduction to be displayed on your profile
+              Write a short introduction to be displayed on your profile.
             </Typography>
           </Box>
           <Divider />
@@ -205,7 +205,7 @@ export default function Profile() {
         <Card>
           <Box sx={{ mb: 1 }}>
             <Typography>Portfolio projects</Typography>
-            <Typography>Share a few snippets of your work.</Typography>
+            <Typography>Share a few examples of your work.</Typography>
           </Box>
 
           <Divider />
