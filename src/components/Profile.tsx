@@ -219,14 +219,14 @@ export default function Profile() {
             />
 
             <FileUpload
-              icon={<i data-feather="film" />}
+
               fileName="Dashboard prototype recording.mp4"
               fileSize="16 MB"
               progress={40}
             />
 
             <FileUpload
-              icon={<i data-feather="upload-cloud" />}
+
               fileName="Dashboard prototype FINAL.fig"
               fileSize="4.2 MB"
               progress={80}
